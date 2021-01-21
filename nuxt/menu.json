@@ -1,0 +1,311 @@
+[
+  {
+    "path": "/",
+    "templateID": 3,
+    "children": [],
+    "sortNum": 0,
+    "page": "full",
+    "ID": 1,
+    "parentID": 0,
+    "label": "首页",
+    "title": "首页",
+    "showInMenu": "1",
+    "seo": {
+      "Keywords": "首页",
+      "description": "首页-skg"
+    }
+  },
+  {
+    "title": "关于SKG",
+    "path": "/about",
+    "templateID": 4,
+    "children": [
+      {
+        "title": "品牌简介",
+        "path": "/about/story",
+        "templateID": 5,
+        "children": [],
+        "sortNum": 0,
+        "page": "inner",
+        "ID": 3,
+        "parentID": 2,
+        "label": "品牌简介"
+      },
+      {
+        "title": "科技研发",
+        "path": "/about/RD",
+        "templateID": 7,
+        "children": [],
+        "sortNum": 2,
+        "page": "inner",
+        "ID": 4,
+        "parentID": 2,
+        "label": "科技研发"
+      },
+      {
+        "title": "视频中心",
+        "path": "/about/video",
+        "templateID": 9,
+        "children": [],
+        "sortNum": 4,
+        "page": "full",
+        "ID": 5,
+        "parentID": 2,
+        "label": "视频中心"
+      },
+      {
+        "title": "新闻资讯",
+        "path": "/about/info",
+        "templateID": 6,
+        "children": [],
+        "sortNum": 0,
+        "page": "inner",
+        "ID": 6,
+        "parentID": 2,
+        "label": "新闻资讯"
+      },
+      {
+        "title": "合作平台",
+        "path": "/about/busiss",
+        "templateID": 8,
+        "children": [],
+        "sortNum": 3,
+        "page": "full",
+        "ID": 7,
+        "parentID": 2,
+        "label": "合作平台"
+      },
+      {
+        "title": "联系我们",
+        "path": "/about/contact",
+        "templateID": 10,
+        "children": [],
+        "sortNum": 5,
+        "page": "inner",
+        "ID": 8,
+        "parentID": 2,
+        "label": "联系我们"
+      }
+    ],
+    "ID": 2,
+    "parentID": 0,
+    "label": "关于SKG",
+    "seo": {
+      "Keywords": "关于SKG",
+      "description": "关于SKG-skg"
+    }
+  },
+  {
+    "title": "产品中心",
+    "path": "/product",
+    "templateID": 11,
+    "sortNum": 1,
+    "page": "full",
+    "children": [
+      {
+        "title": "明星爆款",
+        "path": "/product/skin",
+        "templateID": 13,
+        "children": [],
+        "sortNum": 0,
+        "page": "inner",
+        "ID": 10,
+        "parentID": 9,
+        "label": "明星爆款"
+      },
+      {
+        "title": "按摩仪",
+        "path": "/product/easy/4098",
+        "templateID": 14,
+        "children": [],
+        "sortNum": 1,
+        "page": "inner",
+        "ID": 11,
+        "parentID": 9,
+        "label": "按摩仪"
+      },
+      {
+        "title": "导入导出仪",
+        "path": "/product/back/3249",
+        "templateID": 15,
+        "children": [],
+        "sortNum": 2,
+        "page": "inner",
+        "ID": 12,
+        "parentID": 9,
+        "label": "导入导出仪"
+      },
+      {
+        "title": "美容仪",
+        "path": "/offline/further/3220",
+        "templateID": 22,
+        "children": [],
+        "sortNum": 3,
+        "page": "inner",
+        "ID": 13,
+        "parentID": 9,
+        "label": "美容仪"
+      },
+      {
+        "title": "最新推荐",
+        "path": "/offline/further/4301",
+        "templateID": 23,
+        "children": [],
+        "sortNum": 2,
+        "page": "inner",
+        "ID": 14,
+        "parentID": 9,
+        "label": "最新推荐"
+      }
+    ],
+    "ID": 9,
+    "parentID": 0,
+    "label": "产品中心",
+    "seo": {
+      "Keywords": "关于SKG",
+      "description": "关于SKG-skg"
+    }
+  },
+  {
+    "title": "招商合作",
+    "path": "/zhaoshang",
+    "templateID": 16,
+    "sortNum": 3,
+    "page": "full",
+    "children": [
+      {
+        "title": "加盟优势",
+        "path": "/zhaoshang/jiameng",
+        "templateID": 17,
+        "children": [],
+        "sortNum": 1,
+        "page": "inner",
+        "ID": 16,
+        "parentID": 15,
+        "label": "加盟优势"
+      },
+      {
+        "title": "加盟流程",
+        "path": "/offline/flow",
+        "templateID": 24,
+        "children": [],
+        "sortNum": 3,
+        "page": "inner",
+        "ID": 17,
+        "parentID": 15,
+        "label": "加盟流程"
+      },
+      {
+        "title": "招商热线",
+        "path": "/offline/aboutshop",
+        "templateID": 26,
+        "children": [],
+        "sortNum": 5,
+        "page": "inner",
+        "ID": 18,
+        "parentID": 15,
+        "label": "招商热线"
+      },
+      {
+        "title": "工作机会",
+        "path": "/zhaoshang/job",
+        "templateID": 19,
+        "children": [],
+        "sortNum": 3,
+        "page": "inner",
+        "ID": 19,
+        "parentID": 15,
+        "label": "工作机会"
+      }
+    ],
+    "ID": 15,
+    "parentID": 0,
+    "label": "招商合作",
+    "seo": {
+      "Keywords": "招商合作",
+      "description": "招商合作-skg"
+    }
+  },
+  {
+    "title": "线下门店",
+    "path": "/offline",
+    "templateID": 21,
+    "sortNum": 4,
+    "page": "full",
+    "children": [
+      {
+        "title": "附近门店",
+        "path": "/offline/shopadr",
+        "templateID": 25,
+        "children": [],
+        "sortNum": 4,
+        "page": "inner",
+        "ID": 21,
+        "parentID": 20,
+        "label": "附近门店"
+      }
+    ],
+    "ID": 20,
+    "parentID": 0,
+    "label": "线下门店",
+    "seo": {
+      "Keywords": "线下门店",
+      "description": "线下门店-skg"
+    }
+  },
+  {
+    "title": "中央维修",
+    "path": "/server",
+    "templateID": 33,
+    "sortNum": 9,
+    "page": "full",
+    "children": [
+      {
+        "title": "售后服务",
+        "path": "/server/support",
+        "templateID": 34,
+        "children": [],
+        "sortNum": 1,
+        "page": "inner",
+        "ID": 23,
+        "parentID": 22
+      }
+    ],
+    "ID": 22,
+    "parentID": 0,
+    "label": "中央维修",
+    "seo": {
+      "Keywords": "中央维修",
+      "description": "中央维修-skg"
+    }
+  },
+  {
+    "label": "新闻中心",
+    "title": "新闻中心",
+    "page": "full",
+    "children": [],
+    "parentID": 0,
+    "path": "/news",
+    "sortNum": 0,
+    "templateID": 1569485660422,
+    "ID": 24,
+    "seo": {
+      "Keywords": "新闻中心",
+      "description": "新闻中心-skg"
+    }
+  },
+  {
+    "label": "认证查询",
+    "title": "认证查询",
+    "page": "full",
+    "parentID": 0,
+    "path": "/authen",
+    "sortNum": 0,
+    "templateID": 1572342216808,
+    "ID": 25,
+    "seo": {
+      "Keywords": "认证查询",
+      "description": "认证查询-skg"
+    }
+  }
+]

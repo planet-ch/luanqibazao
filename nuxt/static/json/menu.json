@@ -1,0 +1,252 @@
+[{
+	"path": "/",
+	"templateID": 3,
+	"children": [],
+	"sortNum": 0,
+	"page": "full",
+	"ID": 1,
+	"parentID": 0,
+	"label": "Home",
+    "title": "Home",
+    "seo":{
+        "Keywords":"home",
+        "description":"home-skg"
+    },
+	"showInMenu": "1"
+}, {
+	"title": "About SKG",
+	"path": "/about",
+	"templateID": 4,
+	"children": [{
+		"title": "品牌简介",
+		"path": "/about/story",
+		"templateID": 5,
+		"children": [],
+		"sortNum": 0,
+		"page": "inner",
+		"ID": 3,
+		"parentID": 2,
+		"label": "品牌简介"
+	}, {
+		"title": "科技研发",
+		"path": "/about/RD",
+		"templateID": 7,
+		"children": [],
+		"sortNum": 2,
+		"page": "inner",
+		"ID": 4,
+		"parentID": 2,
+		"label": "科技研发"
+	}, {
+		"title": "视频中心",
+		"path": "/about/video",
+		"templateID": 9,
+		"children": [],
+		"sortNum": 4,
+		"page": "full",
+		"ID": 5,
+		"parentID": 2,
+		"label": "视频中心"
+	}, {
+		"title": "新闻资讯",
+		"path": "/about/info",
+		"templateID": 6,
+		"children": [],
+		"sortNum": 0,
+		"page": "inner",
+		"ID": 6,
+		"parentID": 2,
+		"label": "新闻资讯"
+	}, {
+		"title": "合作平台",
+		"path": "/about/busiss",
+		"templateID": 8,
+		"children": [],
+		"sortNum": 3,
+		"page": "full",
+		"ID": 7,
+		"parentID": 2,
+		"label": "合作平台"
+	}, {
+		"title": "联系我们",
+		"path": "/about/contact",
+		"templateID": 10,
+		"children": [],
+		"sortNum": 5,
+		"page": "inner",
+		"ID": 8,
+		"parentID": 2,
+		"label": "联系我们"
+	}],
+	"ID": 2,
+	"parentID": 0,
+    "label": "About SKG",
+    "seo":{
+        "Keywords":"About SKG",
+        "description":"About SKG-skg"
+    },
+	"showInMenu": "1"
+}, {
+	"title": "Products",
+	"path": "/product",
+	"templateID": 11,
+	"sortNum": 1,
+	"page": "full",
+	"children": [{
+		"title": "明星爆款",
+		"path": "/product/skin",
+		"templateID": 13,
+		"children": [],
+		"sortNum": 0,
+		"page": "inner",
+		"ID": 10,
+		"parentID": 9,
+		"label": "明星爆款"
+	}, {
+		"title": "按摩仪",
+		"path": "/product/easy/4098",
+		"templateID": 14,
+		"children": [],
+		"sortNum": 1,
+		"page": "inner",
+		"ID": 11,
+		"parentID": 9,
+		"label": "按摩仪"
+	}, {
+		"title": "导入导出仪",
+		"path": "/product/back/3249",
+		"templateID": 15,
+		"children": [],
+		"sortNum": 2,
+		"page": "inner",
+		"ID": 12,
+		"parentID": 9,
+		"label": "导入导出仪"
+	}, {
+		"title": "美容仪",
+		"path": "/offline/further/3220",
+		"templateID": 22,
+		"children": [],
+		"sortNum": 3,
+		"page": "inner",
+		"ID": 13,
+		"parentID": 9,
+		"label": "美容仪"
+	}, {
+		"title": "最新推荐",
+		"path": "/offline/further/4301",
+		"templateID": 23,
+		"children": [],
+		"sortNum": 2,
+		"page": "inner",
+		"ID": 14,
+		"parentID": 9,
+		"label": "最新推荐"
+	}],
+	"ID": 9,
+	"parentID": 0,
+    "label": "Products",
+    "seo":{
+        "Keywords":"Products SKG",
+        "description":"Products SKG-skg"
+    },
+	"showInMenu": "1"
+}, {
+	"title": "Join Us",
+	"path": "/zhaoshang",
+	"templateID": 16,
+	"sortNum": 3,
+	"page": "full",
+	"children": [{
+		"title": "加盟优势",
+		"path": "/zhaoshang/jiameng",
+		"templateID": 17,
+		"children": [],
+		"sortNum": 1,
+		"page": "inner",
+		"ID": 16,
+		"parentID": 15,
+		"label": "加盟优势"
+	}, {
+		"title": "加盟流程",
+		"path": "/offline/flow",
+		"templateID": 24,
+		"children": [],
+		"sortNum": 3,
+		"page": "inner",
+		"ID": 17,
+		"parentID": 15,
+		"label": "加盟流程"
+	}, {
+		"title": "招商热线",
+		"path": "/offline/aboutshop",
+		"templateID": 26,
+		"children": [],
+		"sortNum": 5,
+		"page": "inner",
+		"ID": 18,
+		"parentID": 15,
+		"label": "招商热线"
+	}, {
+		"title": "工作机会",
+		"path": "/zhaoshang/job",
+		"templateID": 19,
+		"children": [],
+		"sortNum": 3,
+		"page": "inner",
+		"ID": 19,
+		"parentID": 15,
+		"label": "工作机会"
+	}],
+	"ID": 15,
+	"parentID": 0,
+    "label": "Join Us",
+    "seo":{
+        "Keywords":"Join Us SKG",
+        "description":"Join Us SKG-skg"
+    },
+	"showInMenu": "1"
+}, {
+	"label": "News Center",
+	"title": "News Center",
+	"page": "full",
+	"children": [],
+	"parentID": 0,
+	"path": "/news",
+	"sortNum": 0,
+	"templateID": 1569485660422,
+    "ID": 20,
+    "seo":{
+        "Keywords":"News Center SKG",
+        "description":"News Center SKG-skg"
+    },
+	"showInMenu": "1"
+}, {
+	"label": "Authen",
+	"title": "Authen",
+	"page": "full",
+	"parentID": 0,
+	"path": "/authen",
+	"sortNum": 0,
+	"templateID": 1571642911037,
+    "ID": 21,
+    "seo":{
+        "Keywords":"Authen SKG",
+        "description":"Authen SKG-skg"
+    },
+	"showInMenu": "0"
+}, {
+	"label": "newDetail",
+	"title": "newDetail",
+	"page": "full",
+	"parentID": 0,
+	"path": "/news/:id",
+	"sortNum": 0,
+	"templateID": 1571643177723,
+    "ID": 22,
+    "seo":{
+        "Keywords":"newDetail",
+        "description":"newDetail"
+    },
+	"showInMenu": "0"
+}]

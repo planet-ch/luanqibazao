@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>聆听祝福</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="320">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" type="text/css" href="./css/common.css" >
+    <link rel="stylesheet" type="text/css" href="./css/success.css" >
+</head>
+<script>
+    !function(n){var e=n.document,t=e.documentElement,i=750,d=i/50,o="orientationchange"in n?"orientationchange":"resize",a=function(){var n=t.clientWidth||320;n>750&&(n=750),t.style.fontSize=n/d+"px"};e.addEventListener&&(n.addEventListener(o,a,!1),e.addEventListener("DOMContentLoaded",a,!1))}(window);
+</script>
+<script src="./js/common/vue.min.js"></script>
+<script src="./js/common/jq1.9.1.js"></script>
+<script src="./js/wxconfig.js"></script>
+<script src="./js/common/vconsole.min.js"></script>
+<script>
+    if (window.location.search.includes('vconsole')) {
+        var vConsole = new VConsole();
+    }
+</script>
+<body>
+<div class="content">
+    <img src="./img/box-img.png" alt="" class="box-img">
+    <div class="success-icon"></div>
+    <p class="tip-1">成功送达</p>
+    <p class="tip-2 tip">您的祝福已成功送达</p>
+    <p class="tip-3 tip">记得告诉 TA <span>扫描包装内信封二维码</span></p>
+    <p class="tip-4 tip">接收专属定制祝福吧</p>
+    <div class="back-btn">再定制一封</div>
+</div>
+<script type="text/javascript">
+    window.onload=function(){
+        var backBtn = document.querySelector('.back-btn')
+        backBtn.addEventListener('click', function () {
+            window.location.href = window.location.origin + '/recorder.html'
+        })
+        configWx({},function(){
+          wx.hideAllNonBaseMenuItem()
+        })
+    }
+</script>
+</body>
+</html>

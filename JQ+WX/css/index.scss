@@ -1,0 +1,133 @@
+$fsz:50;
+@function rem($val){
+  @return $val * 2/$fsz*1rem;
+}
+
+.swiper-container{
+  overflow: inherit !important;
+}
+
+#preview{
+  background: none;
+  .mask{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+  }
+  .preview-content{
+    position: inherit;
+    .skg-icon{
+
+    }
+  }
+}
+.content{
+  box-sizing: border-box;
+  font-family: DFPGB_Y5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #42D7C8 url("./../img/new_r_index.png") no-repeat center rem(-8) ;
+  background-size: 100%;
+  padding: 0 rem(20);
+  .box{
+    margin-top: rem(250);
+    //width: rem(322);
+    height: rem(312);
+    background: linear-gradient(-43deg, #F6ECDF, #FFFFFF);
+    border-radius: rem(3);
+    overflow: hidden;
+    .tips{
+      margin-top: rem(42);
+      font-size: rem(15);
+      color: #333;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  .logo{
+    display: flex;
+    margin: rem(46) auto 0;
+    width: 100%;
+    height: rem(244);
+  }
+  .title{
+    margin-top: rem(86);
+    margin-bottom: rem(40);
+    width: 100%;
+    text-align: center;
+    font-size: rem(16);
+    color: #fff;
+  }
+  .input-box{
+    display: flex;
+    width: rem(275);
+    height: rem(36);
+    margin: rem(52) auto 0;
+    border-bottom: rem(1) solid #DCDCDC;
+    color: #fff;
+    input{
+      flex: 1;
+      background: none;
+      display: block;
+      //width: 100%;
+      height: 100%;
+      font-size: rem(11);
+      color: rgba(51, 51, 51, .6);
+      outline: none;
+      &::placeholder{
+        color: rgba(51, 51, 51, .6);
+      }
+    }
+    .smcode-btn{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: rem(8);
+      color: rgba(51, 51, 51, 0.6);
+      width: rem(78);
+      height: rem(20);
+      border-left: 1px solid #DCDCDC;
+    }
+  }
+  .smCode-box{
+    width: rem(275);
+    height: rem(36);
+    margin: rem(12) auto 0;
+    border-bottom: rem(1) solid #DCDCDC;
+    color: #fff;
+    input{
+      background: none;
+      display: block;
+      width: 100%;
+      height: 100%;
+      font-size: rem(11);
+      color: rgba(51, 51, 51, .6);
+      outline: none;
+      &::placeholder{
+        color: rgba(51, 51, 51, .6);
+      }
+    }
+  }
+  .next-step{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(155);
+    height: rem(46);
+    font-size: rem(13);
+    color: #FFF;
+    background: #42D7C8;
+    border-radius: rem(100);
+    margin: rem(33) auto 0;
+  }
+}
+.yibo{
+  //background-image: url("./../img/yibo_bg.png") !important;
+  padding-top: rem(18) !important;
+}

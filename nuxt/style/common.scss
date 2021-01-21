@@ -1,0 +1,104 @@
+$color-gold:#8C723E;
+  @font-face {
+    font-family: DFPGB_Y5 ;
+    src: url(../static/font/DFPGB_Y5_1.eot);
+    src:local('☺'),
+        url(../static/font/DFPGB_Y5_1.eot?#iefix) format('embedded-opentype'),
+        url(../static/font/DFPGB_Y5_1.woff) format('woff'),
+        url(../static/font/DFPGB_Y5_1.ttf) format('truetype'),
+        url(../static/font/DFPGB_Y5_1.svg#webfontOTINA1xY) format('svg');
+  }
+  @font-face {
+      font-family: DFPGB_Y9 ;
+      src: url("../static/font/DFPGB_Y9_1.TTF");
+    }
+* {
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+    font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+ul,
+ol,
+li {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    color: #000;
+    border: none;
+}
+
+input,
+textarea,
+button {
+    border: none;
+    outline: none;
+    border-radius: 0px;
+    -webkit-appearance: none;
+
+    &::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0.3);
+    }
+
+    &::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+    }
+
+}
+.overflow-hidden{
+    overflow: hidden;
+}
+.dialog-open {
+    position: fixed;
+    width: 100%;
+}
+.el-submenu__title{
+  line-height: 20px !important;
+  height: 20px !important;
+  font-size: 12px !important;
+}
+.el-menu--popup-bottom-start {
+  margin-top: 0 !important;
+}
+.el-menu-item {
+  font-size: 12px;
+}
+
+#YSF-BTN-HOLDER {
+  right: 0 !important;
+  bottom: 100px !important;
+}
+#YSF-CUSTOM-ENTRY-0 {
+  box-shadow: none !important;
+}
+.backTop {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 0;
+  bottom: 40px;
+  z-index: 9990;
+  background-image: url("https://file-skg.skg.com/skg.com/20201218/f1b455a0f3594fcc978162feb940ac6e.png");
+  transition: all 1s ;
+  opacity: 0;
+}
+.show{
+  opacity: 1;
+}
+video {
+  object-fit: fill;
+}

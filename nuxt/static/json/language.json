@@ -1,0 +1,31 @@
+{
+    "code":0,
+    "area":[
+        {
+            "title":"Asia Pacific",
+            "cc":[
+                {
+                    "name":"中国",
+                    "icon":"/en/img/language/lang-cn.png",
+                    "url":"https://cn.skg.com"
+                },
+                {
+                    "name":"Hong Kong,China",
+                    "icon":"/en/img/language/lang-cn.png",
+                    "url":"https://www.skg.com.hk"
+                }
+            ]
+        },
+        {
+            "title":"Global",
+            "cc":[
+                {
+                    "name":"Global",
+                    "icon":"/en/img/language/lang-global.png",
+                    "url":"https://www.skg.com"
+                }
+            ]
+        }
+    ]
+
+}

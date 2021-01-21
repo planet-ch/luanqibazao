@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>G7使用指导</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="320">
+    <meta name="x5-video-player-type" content="h5-page">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" type="text/css" href="./css/common.css" >
+    <style>
+
+    </style>
+<!--    <script src="js/common/download.js"></script>-->
+</head>
+<body>
+<div class="video-box">
+    <video controls playsinline webkit-playsinle x5-video-player-type='h5-page' preload="auto"  class="video" id="video" src="https://file-skg.skg.com/Wish/prod/G7_1.mp4"></video>
+<!--    <video controls autoplay preload="auto"  class="video" id="video" src="./img/demo2.mp4"></video>-->
+    <div class="install-btn">下载APP</div>
+    <div class="mask">
+        <div class="guide"></div>
+    </div>
+    <div class="play-icon"></div>
+    <div class="android-play-icon"></div>
+    <div class="index-mask"></div>
+</div>
+</body>
+<script>
+    var video = document.querySelector('.video')
+    var playIcon = document.querySelector('.play-icon')          // 播放暂停按钮DOM
+    var AndplayIcon = document.querySelector('.android-play-icon')          // 播放暂停按钮DOM
+    var installBtn = document.querySelector('.install-btn')      // 下载按钮DOM
+    var indexMask = document.querySelector('.index-mask')                   // 遮罩层DOM
+    var guide = document.querySelector('.guide')
+    var util = {
+        isAndroid: Boolean(navigator.userAgent.match(/android/ig)), // 是否是Android浏览器
+        isIphone: Boolean(navigator.userAgent.match(/iphone|ipod|iOS/ig)), // 是否是苹果浏览器
+        isIpad: Boolean(navigator.userAgent.match(/ipad/ig)), // 是否是 IPad 浏览器
+        Linux: Boolean(navigator.userAgent.match(/Linux/ig)), // 是否是Linux平台浏览器
+        isWeixin: Boolean(navigator.userAgent.match(/MicroMessenger/ig)), // 是否是微信平台浏览器
+        isAli: Boolean(navigator.userAgent.match(/AlipayClient/ig)), // 是否是支付宝平台浏览器
+        isPhone: Boolean(/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)), // 是否是手机端
+        isApp: Boolean(navigator.userAgent.match(/Html5Plus/ig)), // 是否是APP环境下
+        isWeb: !/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent),
+        isQuark: Boolean(navigator.userAgent.match(/android/ig)), // 是否是quark环境下 quark
+    }
+
+    if (!util.isWeixin) {
+        // 如果不是微信  不自动播放 不需要自定义控件 直接展示下载按钮
+        if (util.isQuark) {
+            // 安卓环境下  视频播放会遮挡所有DOM元素 需要播放时展示video标签,播放完 隐藏video标签,才能正常显示DOM
+            AndplayIcon.classList.remove('hide')
+            AndplayIcon.classList.add('zIndex')
+            indexMask.classList.add('show')
+            video.style.display = 'none'
+            installBtn.classList.add('zIndex')
+            guide.style.display = 'none'
+            video.pause()
+            AndplayIcon.addEventListener('click', function () {
+                video.style.display = 'block'
+                indexMask.classList.remove('show')
+                playIcon.style.display = 'none'
+                AndplayIcon.style.display = 'none'
+                video.play()
+            })
+        } else {
+            playIcon.style.display = 'none'
+            AndplayIcon.style.display = 'none'
+        }
+        installBtn.classList.add('bounce-in-top')
+    }
+
+
+    // 默认视频不自动不放 不静音
+    // ios下 微信内自动播放即可
+    if (util.isIphone) {
+        AndplayIcon.style.display = 'none'
+        AndplayIcon.style.display = 'none'
+        // 微信需要监听微信js脚本完成之后执行播放 能处理微信ios环境下视频自动播放
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            video.play();
+        }, false);
+        // video.setAttribute('autoplay', true)
+        // video.setAttribute('x5-playsinline', true)
+        // video.removeAttribute('x5-video-player-type')
+    } else if (util.isAndroid) {
+        // 安卓 区分微信内 微信外
+        // 微信内不可以播放
+        playIcon.style.display = 'none'
+        if (util.isWeixin) {
+            AndplayIcon.style.display = 'none'
+            // 微信需要监听微信js脚本完成之后执行播放 能处理微信ios环境下视频自动播放
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                video.play();
+            }, false);
+            video.play();
+            video.setAttribute('autoplay', true)
+        } else {
+            video.removeAttribute('autoplay')
+            video.removeAttribute('muted')
+            // 微信外,直接创建a标签下载文件
+            // download(file.src, 'demo.mp4')
+        }
+    } else {
+        window.location.href = file.src
+    }
+    window.onload = function(){
+        var video = document.querySelector('.video')                 // 视频DOM
+        var installBtn = document.querySelector('.install-btn')      // 下载按钮DOM
+        var mask = document.querySelector('.mask')                   // 遮罩层DOM
+        var playIcon = document.querySelector('.play-icon')          // 播放暂停按钮DOM
+        var videoDuration = 0
+        var currentDuration = 0
+
+        // 监听视频播放状态
+        video.addEventListener('play', function(e) {
+            playIcon.classList.add('pause')
+            playIcon.classList.remove('replay')
+            installBtn.classList.remove('bounce-in-top')
+        })
+        video.addEventListener('pause', function(e) {
+            playIcon.classList.remove('replay')
+            playIcon.classList.remove('pause')
+        })
+
+        // 视频点击控制事件
+        video.addEventListener('click', function(e) {
+            video.paused ? video.play() : video.pause()
+        })
+
+        // 视频播放完成事件
+        video.addEventListener('ended', function(e) {
+            if (util.isQuark && !util.isWeixin) {
+                video.style.display = 'none'
+                AndplayIcon.classList.add('replay')
+                AndplayIcon.style.display = 'block'
+                indexMask.classList.add('show')
+                playIcon.classList.add('hide')
+                installBtn.classList.add('bounce-in-top')
+            } else {
+                playIcon.classList.add('replay')
+                installBtn.classList.add('bounce-in-top')
+            }
+        })
+
+        // 遮罩层隐藏事件
+        mask.addEventListener('click', function(e) {
+            mask.classList.remove('show')
+        })
+
+        // 遮罩层隐藏事件
+        indexMask.addEventListener('click', function(e) {
+            indexMask.classList.remove('show')
+        })
+
+        // 播放按钮事件
+        playIcon.addEventListener('click', function(e) {
+            video.paused ? video.play() : video.pause()
+        })
+
+        // 获取视频时长
+        video.addEventListener('durationchange', function(e) {
+            videoDuration = Math.floor(video.duration)
+        })
+
+        // 监听进度条跳动 无控制器后不用监听
+        video.addEventListener('seeked', function(e) {
+        })
+
+        // 监听视频播放进度
+        video.addEventListener('timeupdate', function(e) {
+            currentDuration = video.currentTime
+            // if (videoDuration - 10 <= currentDuration) {
+            //     // 进入倒计时最后10s了,弹出按钮
+            //     installBtn.classList.add('bounce-in-top')
+            //     // video.pause()
+            // }
+        })
+
+        // 下载按钮处理逻辑
+        installBtn.addEventListener('click', function(e) {
+            var file = {
+                // src: 'https://blessing.skg.com/js/common/vue.min.js',
+                src: 'https://app.skg.com/qrCodeDownload',
+                // src: window.location.origin + '/video/app/SKG_android_v1.2.0_2021011305_onPrd_120_1_applets_sign.apk',
+                // src: './audio/demo.mp4',
+                name: 'G7指导教程'
+            }
+            if (util.isIphone) {
+                // 苹果无影响,微信内微信外都可直接跳转到APPstore
+                window.location.href = 'https://itunes.apple.com/app/id1517530449'
+            } else if (util.isAndroid) {
+                // 安卓 区分微信内 微信外
+                if (util.isWeixin) {
+                    // 需要引导用户打开默认浏览器
+                    window.location.href = file.src
+                    // mask.classList.add('show')
+                } else {
+                    window.location.href = file.src
+                }
+            } else {
+                window.location.href = file.src
+            }
+        })
+    }
+</script>
+</html>

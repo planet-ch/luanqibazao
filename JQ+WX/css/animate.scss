@@ -1,0 +1,167 @@
+$fsz:50;
+@function rem($val){
+  @return $val * 2/$fsz*1rem;
+}
+//translate3d(0,0,1px) 为了处理ios8以上内核 处理transition动画和层级相互影响的问题, 由translate3d来接管层级显示
+
+//开盖动画
+.swing-top-fwd {
+  animation: 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95) 0s 1 normal both running swing-top-fwd;
+}
+@keyframes swing-top-fwd {
+  0% {
+    transform: perspective(500px) rotateX(0) translate3d(0,0,1px);
+    transform-origin: top;
+  }
+  100% {
+    transform: perspective(500px) rotateX(180deg) translate3d(0,0,-1px);
+    transform-origin: top;
+  }
+}
+
+// 闭合动画
+//动画
+.swing-bottom-fwd {
+  animation: swing-bottom-fwd 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) both;
+}
+@keyframes swing-bottom-fwd {
+  0% {
+    transform: perspective(300px) rotateX(0);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: perspective(300px) rotateX(-180deg);
+    transform-origin: bottom;
+  }
+}
+
+// 信纸出现动画
+.paper-slide-top {
+  animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@keyframes slide-top {
+  0% {
+    transform: translateX(-50%) translate3d(0,0,1px);
+  }
+  100% {
+    transform: translate3d(-50%, rem(-224.5), -1px);
+  }
+}
+
+// 信纸进入动画
+.paper-slide-bottom {
+  animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@keyframes slide-bottom {
+  0% {
+    transform: translate(-50%);
+  }
+  100% {
+    transform: translate(-50%, rem(226.5));
+  }
+}
+
+// 信封展开按鈕动画
+.button-animate {
+  left: rem(104);
+  animation: button-animate 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@keyframes button-animate {
+  0% {
+    transform: rotateY(-180deg);
+    transform-origin: center;
+    opacity: 0;
+    background: none;
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0);
+    transform-origin: center;
+    width: rem(123);
+    height: rem(40);
+    line-height: rem(40);
+    text-align: center;
+    left: rem(78);
+    //background: linear-gradient(-27deg, #F1CE75, #F9EBC8);
+    //box-shadow: 1px 3px 5px 0px rgba(16, 104, 95, 0.69), 0px 0px 0px 0px rgba(255, 254, 252, 0.6), 0px 0px 0px 0px #DEB13F;
+    //border-radius: rem(17);
+    background: linear-gradient(90deg, #D56341, #D96146);
+    box-shadow: 1px 3px 7px 0px rgba(196, 86, 54, 0.6), 0px 0px 0px 0px rgba(255, 254, 252, 0.6);
+    border-radius: rem(18);
+    color: #FFF;
+  }
+}
+
+//信封合上按钮动画
+.button-animate-leave {
+  animation: button-animate-leave 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@keyframes button-animate-leave {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) rotateY(0);
+    transform-origin: center;
+    width: rem(85);
+    height: rem(33);
+    line-height: rem(33);
+    text-align: center;
+    background: linear-gradient(90deg, #D56341, #D96146);
+    box-shadow: 1px 3px 7px 0px rgba(196, 86, 54, 0.6), 0px 0px 0px 0px rgba(255, 254, 252, 0.6);
+    border-radius: rem(18);
+    color: #FFF;
+  }
+  2% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: rem(37);
+    width: rem(50);
+    height: rem(50);
+    font-size: rem(10);
+    transform: translateX(-50%) rotateY(0);
+    transform-origin: center;
+    box-shadow: none;
+    background: url("./../img/red/skg_btn.png") no-repeat center center;
+    background-size: 100%;
+  }
+}
+
+
+// 红包离开动画
+.envelope-run {
+  //animation: envelope-run 0.45s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
+  animation: envelope-run 1s ease-in both;
+}
+@keyframes envelope-run {
+  0% {
+    -webkit-transform: translateY(0) rotateX(0) scale(1);
+    transform: translateY(0) rotateX(0) scale(1) ;
+    -webkit-transform-origin: 50% 1400px;
+    transform-origin: 50% 1400px;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+    transform: translateY(-600px) rotateX(-30deg) scale(0);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    opacity: 1;
+  }
+}
+
+.envelope-down {
+  animation: envelope-down 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes envelope-down {
+  0% {
+    margin-top: (-150);
+  }
+  100% {
+    margin-top: (0);
+  }
+}
+

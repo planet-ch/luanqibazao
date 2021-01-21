@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>聆听祝福</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="320">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" type="text/css" href="./css/common.css" >
+    <link rel="stylesheet" type="text/css" href="./css/index.css" >
+    <link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/open/libs/weui/2.4.1/weui.css" >
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+<!--    <script src="https://unpkg.com/swiper/swiper-bundle.js"> </script>-->
+    <script src="./js/common/swiper-bundle.min.js"> </script>
+</head>
+<script>
+  !function(n){var e=n.document,t=e.documentElement,i=750,d=i/50,o="orientationchange"in n?"orientationchange":"resize",a=function(){var n=t.clientWidth||320;n>750&&(n=750),t.style.fontSize=n/d+"px"};e.addEventListener&&(n.addEventListener(o,a,!1),e.addEventListener("DOMContentLoaded",a,!1))}(window);
+</script>
+<script src="./js/common/vue.min.js"></script>
+<script src="./js/common/vconsole.min.js"></script>
+<script>
+    if (window.location.search.includes('vconsole')) {
+        var vConsole = new VConsole();
+    }
+</script>
+<body>
+<!--<audio src="https://bless.skg.com/k.mp3" controls autoplay></audio>-->
+<!--<audio src="https://bless.skg.com/k7sv3GTPr5LKE9IcimFULagAMSZwFRezD-ZazOJMsDDpoFWHeZq2qyoC-V_UZFPY.amr-->
+<!--" controls autoplay></audio>-->
+<div class="content" id="content">
+<!--    <img src="./img/logo.png" alt="" class="logo">-->
+<!--    <div class="logo"></div>-->
+<!--    <div class="title">输入您的电话号码，聆听他/她对您的祝福</div>-->
+<!--    <div class="title"></div>-->
+    <div class="box">
+        <p class="tips">输入您的电话号码，聆听他/她对您的祝福</p>
+        <div class="input-box">
+            <input type="tel" placeholder="请输入手机号码" v-model="mobile" class="mobile">
+            <div class="smcode-btn" @click="getSmCode" v-if="!getting">获取验证码</div>
+            <div class="smcode-btn" @click="getSmCode" v-else-if="getting">{{codeTime}}s</div>
+        </div>
+        <div class="smCode-box">
+            <input maxlength="6" type="tel" placeholder="请输入短信验证码" v-model="smCode" class="mobile">
+        </div>
+        <div class="next-step" @click="preview">下一步</div>
+    </div>
+
+
+    <!-- 预览模态框 -->
+    <div id="preview" style="display: none">
+        <div class="mask" @click="previewConfirm"></div>
+        <div class="close-btn" @click="closeDialog"></div>
+        <div class="swiper-container gallery-top">
+            <div class="swiper-wrapper">
+
+                <div class="preview-content swiper-slide" v-for="(item, index) in data">
+                    <div class="red-envelope">
+                        <div class="envelope-back-bottom"></div>
+                        <div class="envelope-top" :data-index="index">
+                            <div class="front"></div>
+                            <div class="back"></div>
+                        </div>
+                        <div class="envelope-front-bottom"></div>
+                        <div class="envelope-icon" @click="open(index)" :data-index="index">
+                            <audio :ref="'audio' + index" :src="item.recordUrl" v-if="item.recordUrl"></audio>
+                        </div>
+                        <div class="envelope-paper">
+                            <img class="blessing-img" :src="item.bgUrl" />
+                            <div class="blessing-title">
+                                <p class="ellipsis3" v-html="item.content"></p>
+                            </div>
+<!--                            <div :class="[item.play ? 'pause play-btn' : 'play-btn']" @click="playOrPause(item, index)">-->
+<!--                                <audio :ref="'audio' + index" :src="item.recordUrl" v-if="item.recordUrl"></audio>-->
+<!--                            </div>-->
+                            <div class="skg-icon">
+                            </div>
+                        </div>
+                    </div>
+
+<!--                    <div class="close-btn" @click="closeDialog"></div>-->
+                </div>
+            </div>
+        </div>
+        <div class="swiper-container gallery-thumbs swiper-container-initialized swiper-container-horizontal swiper-container-free-mode swiper-container-thumbs" v-show="data.length > 1">
+            <div class="swiper-wrapper" id="swiper-wrapper-ee429b4f994791079" aria-live="polite">
+                <div class="swiper-slide img-logo" role="group" :aria-label="`${index+1} / ${data.length}`" v-for="(item, index) in data" >
+                    <img :src="item.bgUrl">
+                    <div class="img-mask"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- tips -->
+    <div class="weui-toptips weui-toptips_warn" id="topTips" ></div>
+</div>
+<script src="./js/common/jq1.9.1.js?v=1.0"></script>
+<script src="./js/common/index.js?v=1.1"></script>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+<script src="./js/wxconfig.js?v=1.0"></script>
+<script src="./js/index.js?v=1.0"></script>
+</body>
+</html>

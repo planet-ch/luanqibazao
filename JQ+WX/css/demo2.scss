@@ -1,0 +1,95 @@
+// Z-index
+// 前封面底部 100
+// 前封面頂部 101
+// 后封面底部 96
+// 后封面頂部 96
+// 信紙 98
+// ICON 105
+$fsz:50;
+@function rem($val){
+  @return $val * 2/$fsz*1rem;
+}
+.content{
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  overflow: hidden;
+  position: relative;
+  .red-envelope{
+    margin: 100px auto;
+    width: rem(297);
+    height: rem(285);
+    position: relative;
+    color: #031A22;
+    overflow: hidden;
+    >div{
+      position: absolute;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      font-size: 26px;
+    }
+    .envelope-back-bottom{
+      z-index: 96;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0px;
+      width: rem(297);
+      height: rem(131);
+      background: url("./../img/red/back_bottom.png") no-repeat center/cover;
+    }
+    .envelope-top{
+      transform: translate3d(0,0,0);
+      transform-style: preserve-3d;
+      top: rem(77);
+      width: 100%;
+      height: rem(77);
+      z-index: 93;
+      >div{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+      }
+
+      .back{
+        transform: rotateX(180deg);
+        background: url("./../img/red/back_top.png") no-repeat center/cover;
+      }
+      .front{
+        backface-visibility: hidden;
+        background: url("./../img/red/front_top.png") no-repeat center/cover;
+      }
+    }
+    .envelope-front-bottom{
+      z-index: 100;
+      bottom: 0px;
+      width: rem(297);
+      height: rem(131);
+      background: url("./../img/red/front_bottom.png") no-repeat center/cover;
+    }
+    .envelope-icon{
+      z-index: 105;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: rem(37);
+      width: rem(50);
+      height: rem(50);
+      background: url("./../img/red/skg_btn.png") no-repeat center/cover;
+    }
+    .envelope-paper{
+      z-index: 98;
+      transform: translateX(-50%);
+      left: 50%;
+      //top: rem(154);
+      //top: 0;
+      top: 0;
+      width: rem(271);
+      height: rem(249);
+      background: url("./../img/red/paper.png") no-repeat center/cover;
+    }
+  }
+}
+
+
